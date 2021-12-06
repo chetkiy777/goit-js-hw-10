@@ -25,11 +25,15 @@ inputField.addEventListener('input', debounce(() => {
   if (minLetter >= 1) {
     CountryAPI.fetchCountry()
       .then(countrysArray => {
+
+        // Проверка если в массиве более 10 стран
         if (countrysArray.length >= 10) {
           return Notify.info('Too many matches found. Please enter a more specific name')
+          // Проверка если в массиве 1 страна - рендерим её инфо
         } else if (countrysArray.length === 1) {
           console.log(countrysArray)
-          renderCountryInfo(countrysArray) 
+          renderCountryInfo(countrysArray)
+          // Проверка если в массиве стран больше 1 и меньше 10 - рендерим список стран
         } else if (countrysArray.length < 10 && countrysArray.length >= 2) {
           renderCountryList(countrysArray)
         } else {
@@ -37,6 +41,7 @@ inputField.addEventListener('input', debounce(() => {
         }
       })
       .catch(error => console.log(error))
+    // Очистка всего контента , если в инпуте пустая строка
   } else if (minLetter === 0) {
     clearList()
   }

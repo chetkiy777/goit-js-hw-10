@@ -5,7 +5,7 @@ export default class Country {
 
     fetchCountry() {
         const url = `https://restcountries.com/v2/name/${this.searchQuery}`
-      return fetch(url).then(r => {return r.json()})
+        return fetch(url).then(r => {return r.json()})
     }
 
     get query() {

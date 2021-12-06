@@ -1,17 +1,20 @@
-export default function renderCountryInfo({capital, area, population, flags}) {
-    return `
-        <li>
-            <img src=${flags.png} alt="">
-        </li>
-        <li>
-            <span>Населеник: </span> ${population}
-        </li>
-        <li>
-           <span>Площадь: </span> ${area}
-        </li>
-        <li>
-            <span>Столица: </span>${capital}
-        </li>
+export default function renderCountryInfo(countryArray) {
+    
+    const card = document.querySelector('.country-info')
+
+    return countryArray.map(country => {
+        const { name, capital, area, population, flags } = country
         
-        `
+        return card.innerHTML = `
+            <article class="card">
+                <h1 class="card__title">${name}</h1>
+                <div class="card__img-thumb">
+                    <img src=${flags.png} alt="flags">
+                </div>
+                <p class="card__item">${capital}</p>
+                <p class="card__item">${area}</p>
+                <p class="card__item">${population}</p>
+            </article>
+            `
+    })
 }

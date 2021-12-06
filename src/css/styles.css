@@ -22,3 +22,14 @@ body {
 ul {
   list-style: none;
 }
+
+.list__item {
+  display: flex;
+  align-items: center;
+}
+
+.list__img-thumb {
+  display: inline-block;
+  width: 50px;
+  margin-right: 10px;
+}

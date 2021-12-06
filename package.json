@@ -25,11 +25,8 @@
     "posthtml-include": "^1.6.2"
   },
   "dependencies": {
-    "lodah": "0.0.1-security",
     "lodash": "^4.17.21",
-    "lodash.debounce": "^4.0.8",
     "notiflix": "^3.2.2",
-    "sass": "^1.44.0",
-    "throttle-debounce": "^3.0.1"
+    "sass": "^1.44.0"
   }
 }

@@ -3,9 +3,9 @@ export default class Country {
         this.searchQuery = '';
     }
 
-    fetchCountry() {
+  async fetchCountry() {
         const url = `https://restcountries.com/v2/name/${this.searchQuery}?fields=name,capital,population,languages,flags`
-        return fetch(url).then(r => {return r.json()})
+        return await fetch(url).then(r =>  r.json())
     }
 
     get query() {

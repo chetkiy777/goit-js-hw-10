@@ -17,7 +17,7 @@ inputField.addEventListener('input', debounce(() => {
   
   let inputValue = inputField.value.trim()
   countryAPI.query = inputValue
-  const minLetter = inputValue.split('').length
+  const minLetter = inputValue.length
 
   // Проверка на количество введенных букв
   if (minLetter >= 1) {
